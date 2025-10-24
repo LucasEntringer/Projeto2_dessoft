@@ -15,3 +15,12 @@ def preenche_frota(frota, nome_navio, linha, coluna, orientacao, tamanho):
     else:
        res [nome_navio] = [define_posicoes(linha, coluna, orientacao, tamanho)]
     return res
+
+def faz_jogada(tabuleiro, linha, coluna):
+    pos = tabuleiro[linha][coluna]
+    if pos == 1:
+        pos = 'X'
+    elif pos == 0:
+        pos = '-'
+    tabuleiro[linha][coluna] = pos
+    return tabuleiro
