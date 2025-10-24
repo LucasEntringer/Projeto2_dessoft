@@ -7,9 +7,3 @@ def define_posicoes (linha, coluna, orientacao, tamanho):
         for i in range(tamanho):
             res.append([linha, coluna + i])
     return res
-
-def preenche_frota (frota, nome_navip, linha, coluna, orientacao, tamanho):
-    res = {
-        frota : define_posicoes(linha, coluna, orientacao, tamanho)
-    }
-    return res
