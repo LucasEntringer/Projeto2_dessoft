@@ -2,10 +2,8 @@ def define_posicoes (linha, coluna, orientacao, tamanho):
     res = []
     if orientacao == "vertical":
         for i in range(tamanho):
-            casa = [linha + i, coluna]
-            res.append(casa)
-    else:
+            res.append([linha+i, coluna])
+    elif orientacao == "horizontal":
         for i in range(tamanho):
-            casa = [linha, coluna + i]
-            res.append(casa)
+            res.append([linha, coluna + i])
     return res
