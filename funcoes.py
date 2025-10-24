@@ -8,8 +8,7 @@ def define_posicoes (linha, coluna, orientacao, tamanho):
             res.append([linha, coluna + i])
     return res
 
-def preenche_frota (frota, nome_navip, linha, coluna, orientacao, tamanho):
-    res = {
-        frota : define_posicoes(linha, coluna, orientacao, tamanho)
-    }
+def preenche_frota (frota, nome_navio, linha, coluna, orientacao, tamanho):
+    res = frota
+    res [nome_navio] = define_posicoes(linha, coluna, orientacao, tamanho)
     return res
