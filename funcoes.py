@@ -47,3 +47,16 @@ def afundados (frota, tabuleiro):
             if afunda == True:
                 res += 1
     return res
+
+def posicao_valida (frota, linha, coluna, orientacao, tamanho):
+    novo = define_posicoes(linha, coluna, orientacao, tamanho)
+    for posicao in novo:
+        y,x = posicao
+        if x >= 10 or y >= 10 or x< 0 or y < 0:
+            return False
+    for nome, lista in frota.items():
+        for navio in lista:
+            for pos in navio:
+                if pos in novo:
+                    return False
+    return True
