@@ -24,3 +24,12 @@ def faz_jogada(tabuleiro, linha, coluna):
         pos = '-'
     tabuleiro[linha][coluna] = pos
     return tabuleiro
+
+def posiciona_frota (frota):
+    res = [[0] * 10 for _ in range(10)]
+    for nome, lista in frota.items():
+        for navio in lista:
+            for posicao in navio:
+                y,x = posicao
+                res[y][x] = 1
+    return  res
