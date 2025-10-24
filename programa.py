@@ -24,7 +24,10 @@ quantidade = {
 for navio, valor in tamanho.items():
     for i in range(quantidade[navio]):
         print(f'Insira as informações referentes ao navio {navio} que possui tamanho {valor}')
-        int(input('Linha: '))
-        int(input('Coluna: '))
+        linha = int(input('Linha: '))
+        coluna = int(input('Coluna: '))
+        orientacao = 'vertical'
         if navio != 'submarino':
-            int(input('Digite 1 para vertical ou 2 para horizontal: '))
+            direcao = int(input('Digite 1 para vertical ou 2 para horizontal: '))
+            if direcao == 2:
+                orientacao = 'horizontal'
