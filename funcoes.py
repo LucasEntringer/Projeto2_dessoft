@@ -33,3 +33,17 @@ def posiciona_frota (frota):
                 y,x = posicao
                 res[y][x] = 1
     return  res
+
+def afundados (frota, tabuleiro):
+    res = 0
+    for nome, lista in frota.items():
+        for navio in lista:
+            afunda = True
+            for posicao in navio:
+                y,x = posicao
+                if tabuleiro[y][x] != 'X':
+                    afunda = False
+                    break
+            if afunda == True:
+                res += 1
+    return res
