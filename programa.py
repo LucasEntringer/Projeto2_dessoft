@@ -21,27 +21,39 @@ quantidade = {
     "submarino": 4,
 }
 
-for navio, valor in tamanho.items():
-    # for i in range(quantidade[navio]):
-    i = 1
-    while i <= quantidade[navio]:
-        j = 0
-        while j == 0:
-            print(f'Insira as informações referentes ao navio {navio} que possui tamanho {valor}')
-            linha = int(input('Linha: '))
-            coluna = int(input('Coluna: '))
-            orientacao = 'vertical'
-            tam = tamanho[navio]
-            if navio != 'submarino':
-                direcao = int(input('Digite 1 para vertical ou 2 para horizontal: '))
-                if direcao == 2:
-                    orientacao = 'horizontal'
-                elif direcao != 2 and direcao != 1:
-                    print('Esta posição não é válida')
+for navio, tam in tamanho.items():
+    colocados = 0
+    while colocados <= quantidade[navio]:
+        while True:
+            linha = int(input("Linha (0-9): "))
+            if linha < 0 or linha > 9:
+                print("Entrada inválida. Digite apenas números inteiros não-negativos.")
+                continue
+            break
+        while True:
+            coluna = int(input("Coluna (0-9): "))
+            if coluna < 0 or coluna > 9:
+                print("Valor fora do intervalo [0-9]. Tente novamente.")
+                continue
+            break
+        orientacao = 'vertical'
+        if navio != 'submarino':
+            while True:
+                d = input("Digite 1 para vertical ou 2 para horizontal: ").strip()
+                if d == '1':
+                    orientacao = 'vertical'
                     break
-            if posicao_valida(frota, linha, coluna, orientacao, tam) == True:
-                frota = preenche_frota(frota, navio, linha, coluna, orientacao, tam)
-                j = 1
-                break
-            else: print('Esta posição não é válida')
+                elif d == '2':
+                    orientacao = 'horizontal'
+                    break
+                else:
+                    print("Entrada inválida. Digite 1 ou 2.")
+        else:
+            orientacao = 'vertical'
+
+        if posicao_valida(frota, linha, coluna, orientacao, tam):
+            frota = preenche_frota(frota, navio, linha, coluna, orientacao, tam)
+            colocados += 1
+        else:
+            print("Esta posição não é válida. Tente novamente.")
 print(frota)
