@@ -100,9 +100,14 @@ while True:
         print('Parabéns! Você derrubou todos os navios do seu oponente!')
         break
     else:
+        tentativas = 0
         while True: 
             linha_o = random.randint(0, 9)
             coluna_o = random.randint(0, 9)
+            tentativas += 1
+            if tentativas > 200:
+                print('O oponente não encontrou posições válidas para poder atacar')
+                break
             if tabuleiro_jogador[linha_o][coluna_o] == '-' or tabuleiro_jogador[linha_o][coluna_o] == 'X':
                 continue
             tabuleiro_jogador = faz_jogada(tabuleiro_jogador, linha_o, coluna_o)
