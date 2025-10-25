@@ -23,7 +23,7 @@ quantidade = {
 
 for navio, tam in tamanho.items():
     colocados = 0
-    while colocados <= quantidade[navio]:
+    while colocados < quantidade[navio]:
         while True:
             linha = int(input("Linha (0-9): "))
             if linha < 0 or linha > 9:
