@@ -26,31 +26,13 @@ quantidade = {
 for navio, tam in tamanho.items():
     colocados = 0
     while colocados < quantidade[navio]:
-        while True:
-            print(f'Insira as informações referentes ao navio {navio} que possui tamanho {tam}')
-            linha = int(input("Linha (0-9): "))
-            if linha < 0 or linha > 9:
-                print("Esta posição não está válida!")
-                continue
-            break
-        while True:
-            coluna = int(input("Coluna (0-9): "))
-            if coluna < 0 or coluna > 9:
-                print("Esta posição não está válida!")
-                continue
-            break
+        print(f'Insira as informações referentes ao navio {navio} que possui tamanho {tam}')
+        linha = int(input("Linha (0-9): "))
+        coluna = int(input("Coluna (0-9): "))
         orientacao = 'vertical'
         if navio != 'submarino':
-            while True:
-                d = input("Digite 1 para vertical ou 2 para horizontal: ").strip()
-                if d == '1':
-                    orientacao = 'vertical'
-                    break
-                elif d == '2':
-                    orientacao = 'horizontal'
-                    break
-                else:
-                    print("Esta posição não está válida!")
+            d = input("Digite 1 para vertical ou 2 para horizontal: ").strip()
+            orientacao = 'vertical' if d == '1' else 'horizontal'
         else:
             orientacao = 'vertical'
 
