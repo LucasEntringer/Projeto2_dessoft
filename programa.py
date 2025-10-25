@@ -31,3 +31,6 @@ for navio, valor in tamanho.items():
             direcao = int(input('Digite 1 para vertical ou 2 para horizontal: '))
             if direcao == 2:
                 orientacao = 'horizontal'
+        if posicao_valida(frota, linha, coluna, orientacao, tamanho) == True:
+            frota = preenche_frota(frota, navio, linha, coluna, orientacao, tamanho)
+        else: print('Esta posição não é válida')
