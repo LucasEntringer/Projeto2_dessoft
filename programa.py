@@ -23,6 +23,7 @@ quantidade = {
 
 for navio, tam in tamanho.items():
     colocados = 0
+    print(f'Insira as informações referentes ao navio {navio} que possui tamanho {tam}')
     while colocados < quantidade[navio]:
         while True:
             linha = int(input("Linha (0-9): "))
