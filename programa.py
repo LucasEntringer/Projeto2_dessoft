@@ -28,13 +28,13 @@ for navio, tam in tamanho.items():
             print(f'Insira as informações referentes ao navio {navio} que possui tamanho {tam}')
             linha = int(input("Linha (0-9): "))
             if linha < 0 or linha > 9:
-                print("Esta posição não é válida!")
+                print("Esta posição não está válida!")
                 continue
             break
         while True:
             coluna = int(input("Coluna (0-9): "))
             if coluna < 0 or coluna > 9:
-                print("Esta posição não é válida!")
+                print("Esta posição não está válida!")
                 continue
             break
         orientacao = 'vertical'
@@ -56,5 +56,5 @@ for navio, tam in tamanho.items():
             frota = preenche_frota(frota, navio, linha, coluna, orientacao, tam)
             colocados += 1
         else:
-            print("Esta posição não é válida!")
+            print("Esta posição não está válida!")
 print(frota)
