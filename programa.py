@@ -23,9 +23,9 @@ quantidade = {
 
 for navio, tam in tamanho.items():
     colocados = 0
-    print(f'Insira as informações referentes ao navio {navio} que possui tamanho {tam}')
     while colocados < quantidade[navio]:
         while True:
+            print(f'Insira as informações referentes ao navio {navio} que possui tamanho {tam}')
             linha = int(input("Linha (0-9): "))
             if linha < 0 or linha > 9:
                 print("Entrada inválida. Digite apenas números inteiros não-negativos.")
